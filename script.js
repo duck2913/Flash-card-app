@@ -67,7 +67,7 @@ const resetTextAreas = function () {
 const showCurrentCard = function () {
 	const cards = document.querySelectorAll(".card");
 	cards.forEach((card) => card.classList.remove("active"));
-	cards[currentCard].classList.add("active");
+	cards[currentCard]?.classList.add("active");
 };
 const updateIndex = function () {
 	const cards = document.querySelectorAll(".card");
