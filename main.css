@@ -190,6 +190,10 @@ body {
   color: #333;
 }
 
+.cards-container .card .inner-card--back::after {
+  opacity: 1;
+}
+
 .cards-container .card.flip .inner-card {
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);

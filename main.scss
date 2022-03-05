@@ -92,6 +92,9 @@ body {
 				transform: rotateY(180deg);
 				background-color: lightgreen;
 				color: #333;
+				&::after {
+					opacity: 1;
+				}
 			}
 		}
 		&.flip .inner-card {

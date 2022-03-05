@@ -14,6 +14,33 @@ const index = document.querySelector(".index");
 let currentCard = 0;
 let data = [];
 //utilities functions
+const updateLocalStorage = function () {
+	localStorage.setItem("data", JSON.stringify(data));
+};
+
+const getDataFromLocalStorage = function () {
+	cardsContainer.innerHTML = "";
+	data = JSON.parse(localStorage.getItem("data")) ? JSON.parse(localStorage.getItem("data")) : [];
+	data.forEach((card) => {
+		const { question, answer } = card;
+		const cardEl = document.createElement("div");
+		cardEl.classList.add("card");
+		cardEl.innerHTML = `
+        <div class="inner-card">
+            <div class="inner-card--front">
+                <p>${question}</p>
+            </div>
+            <div class="inner-card--back">
+                <p>${answer}</p>
+            </div>
+        </div>
+    `;
+		cardsContainer.appendChild(cardEl);
+	});
+	updateIndex();
+	showCurrentCard();
+};
+
 const createNewCard = function (question, answer) {
 	const card = document.createElement("div");
 	card.classList.add("card");
@@ -29,6 +56,7 @@ const createNewCard = function (question, answer) {
     `;
 	cardsContainer.appendChild(card);
 	data.push({ question: question, answer: answer });
+	updateLocalStorage();
 };
 
 const resetTextAreas = function () {
@@ -97,3 +125,6 @@ btnClear.addEventListener("click", function () {
 	currentCard = 0;
 	index.innerText = "0/0";
 });
+
+//init
+getDataFromLocalStorage();
