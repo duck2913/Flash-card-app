@@ -72,6 +72,7 @@ const showCurrentCard = function () {
 const updateIndex = function () {
 	const cards = document.querySelectorAll(".card");
 	const total = cards.length;
+	if (currentCard === 0) index.innerText = "0/0";
 	index.innerText = `${currentCard + 1}/${total}`;
 };
 //events listener
@@ -124,6 +125,7 @@ btnClear.addEventListener("click", function () {
 	cardsContainer.innerHTML = "";
 	currentCard = 0;
 	index.innerText = "0/0";
+	updateLocalStorage();
 });
 
 //init
