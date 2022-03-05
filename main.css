@@ -1,0 +1,214 @@
+@charset "UTF-8";
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+input,
+textarea,
+select,
+button {
+  outline: none;
+}
+
+input {
+  line-height: normal;
+}
+
+label,
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+img {
+  display: inline-block;
+  width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+section[id] {
+  scroll-margin-top: 3rem;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.btn--clear {
+  position: absolute;
+  left: 3rem;
+  bottom: 3rem;
+  font-size: 1.4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5px;
+  padding: 3px 1rem;
+  border: none;
+  background-color: #333;
+  color: white;
+  font-family: inherit;
+  border-radius: 1rem;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+}
+
+.btn--new {
+  position: absolute;
+  top: 10rem;
+  right: 25rem;
+  padding: 3px 1rem;
+  border: none;
+  background-color: #333;
+  color: white;
+  font-family: inherit;
+  border-radius: 1rem;
+  font-size: 1.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.cards-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2rem;
+  width: 30rem;
+  height: 20rem;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+}
+
+.cards-container .card {
+  position: relative;
+  min-width: 30rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  margin-top: 2rem;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+  opacity: 0;
+  -webkit-transform: translateX(50%) rotateY(-20deg);
+          transform: translateX(50%) rotateY(-20deg);
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.cards-container .card.active {
+  opacity: 1;
+  -webkit-transform: translateY(0) rotateY(0deg);
+          transform: translateY(0) rotateY(0deg);
+}
+
+.cards-container .card .inner-card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  -webkit-transition: -webkit-transform 0.8s;
+  transition: -webkit-transform 0.8s;
+  transition: transform 0.8s;
+  transition: transform 0.8s, -webkit-transform 0.8s;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+          box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.cards-container .card .inner-card--front, .cards-container .card .inner-card--back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.cards-container .card .inner-card--front::after, .cards-container .card .inner-card--back::after {
+  content: "🔭 Flip";
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  opacity: 0.5;
+}
+
+.cards-container .card .inner-card--back {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  background-color: lightgreen;
+  color: #333;
+}
+
+.cards-container .card:hover .inner-card {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.navigation button {
+  background-color: transparent;
+  border: none;
+  font-size: 1.4rem;
+  margin: 0 2rem;
+}
+
+.add-card-window {
+  display: none;
+}
+/*# sourceMappingURL=main.css.map */

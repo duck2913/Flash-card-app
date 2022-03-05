@@ -10,7 +10,75 @@
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
         <!-- googlefont -->
         <link rel="stylesheet" href="./main.css">
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" defer></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js" defer></script>
         <script src="./script.js" defer></script>
     </head>
-    <body></body>
+    <body>
+        <button class="btn--clear">
+            <ion-icon name="trash"></ion-icon>
+            Clear all cards
+        </button>
+        <button class="btn--new">
+            <ion-icon name="add"></ion-icon>
+            Add new card
+        </button>
+        <h1>
+            Memory Cards
+        </h1>
+        <div class="cards-container">
+            <div class="card active">
+                <div class="inner-card">
+                    <div class="inner-card--front">
+                        <p>What is JS</p>
+                    </div>
+                    <div class="inner-card--back">
+                        <p>It's a programming language</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="inner-card">
+                    <div class="inner-card--front">
+                        <p>What is JS</p>
+                    </div>
+                    <div class="inner-card--back">
+                        <p>It's a programming language</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="navigation">
+            <button class="btn--prev">
+                <ion-icon name="arrow-back"></ion-icon>
+            </button>
+            <div class="index">1/2</div>
+            <button class="btn--next">
+                <ion-icon name="arrow-forward"></ion-icon>
+            </button>
+        </div>
+        <div class="add-card-window">
+            <h2>Add New Card</h2>
+            <div class="group">
+                <label for="question">Question:</label>
+                <textarea
+                    name="question"
+                    class="question"
+                    cols="30"
+                    rows="10"
+                    placeholder="Enter your question here..."
+                ></textarea>
+            </div>
+            <div class="group">
+                <label for="answer">Answer:</label>
+                <textarea
+                    name="answer"
+                    class="answer"
+                    cols="30"
+                    rows="10"
+                    placeholder="Enter your answer here..."
+                ></textarea>
+            </div>
+        </div>
+    </body>
 </html>
