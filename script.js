@@ -72,8 +72,8 @@ const showCurrentCard = function () {
 const updateIndex = function () {
 	const cards = document.querySelectorAll(".card");
 	const total = cards.length;
-	if (currentCard === 0) index.innerText = "0/0";
 	index.innerText = `${currentCard + 1}/${total}`;
+	if (currentCard === 0) index.innerText = "0/0";
 };
 //events listener
 btnAddNewCardWindow.addEventListener("click", function () {
