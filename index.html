@@ -19,46 +19,30 @@
             <ion-icon name="trash"></ion-icon>
             Clear all cards
         </button>
-        <button class="btn--new">
+        <button class="btn--new-card">
             <ion-icon name="add"></ion-icon>
             Add new card
         </button>
         <h1>
             Memory Cards
         </h1>
-        <div class="cards-container">
-            <div class="card active">
-                <div class="inner-card">
-                    <div class="inner-card--front">
-                        <p>What is JS</p>
-                    </div>
-                    <div class="inner-card--back">
-                        <p>It's a programming language</p>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="inner-card">
-                    <div class="inner-card--front">
-                        <p>What is JS</p>
-                    </div>
-                    <div class="inner-card--back">
-                        <p>It's a programming language</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div class="cards-container"></div>
         <div class="navigation">
             <button class="btn--prev">
                 <ion-icon name="arrow-back"></ion-icon>
             </button>
-            <div class="index">1/2</div>
+            <div class="index">0/0</div>
             <button class="btn--next">
                 <ion-icon name="arrow-forward"></ion-icon>
             </button>
         </div>
-        <div class="add-card-window">
-            <h2>Add New Card</h2>
+        <div class="add-new-card-window">
+            <h2>
+                Add New Card
+                <button class="btn--close">
+                    <ion-icon name="close-outline"></ion-icon>
+                </button>
+            </h2>
             <div class="group">
                 <label for="question">Question:</label>
                 <textarea
@@ -79,6 +63,10 @@
                     placeholder="Enter your answer here..."
                 ></textarea>
             </div>
+            <button class="btn--add">
+                <ion-icon name="checkmark-outline"></ion-icon>
+                Add Card
+            </button>
         </div>
     </body>
 </html>
